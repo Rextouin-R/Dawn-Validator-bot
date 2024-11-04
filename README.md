@@ -45,7 +45,7 @@
 		// Add more accounts as needed
 	];
 	```
-4. Edit berkas `config.js` jika tidak ingin menggunakan proxy biarkan "false".
+4. Edit berkas `config.js`. dan jika tidak ingin menggunakan proxy biarkan "false".
 	```
 	// config.js
 	module.exports = {
