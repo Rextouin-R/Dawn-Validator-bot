@@ -59,7 +59,7 @@
 	    accountDelay: 121, //
 	};
 	```
-5. Untuk menjalankan svriptnya, ketikan perintah :
+5. Untuk menjalankan scriptnya, ketikan perintah :
     ```
     node index.js
     ```
