@@ -8,6 +8,7 @@
 
 ## Memerlukan 
 - Node JS
+- `install nodejs`
 
 ## Features
 
