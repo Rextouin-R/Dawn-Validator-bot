@@ -29,9 +29,8 @@ const displayWelcome = () => {
 ┃ ┗━┛ ┃ ┃ ┏━┓ ┃ ┃ ┃ ┃ ┃ ┃ ┏━┓ ┏━┓ ┃ ┃ ┃ ┃ ┗━━┓ ┃ ┏━━┛ ┃ ━━ ┃
 ┗━━━ ━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━┛ ┗━━━━┛ ┗━━━━┛ ╰━━━━┛
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-                       🐦 █▄▄ █ █▀█ █▀▄ █▀ █░█ █ ▄▄ █▄▄ █▀█ ▀█▀
-                          █▄█ █ █▀▄ █▄▀ ▄█ █▄█ █ ░░ █▄█ █▄█ ░█░
-
+                                             █▀▄ ▄▀█ █░█░█ █▄░█
+                                             █▄▀ █▀█ ▀▄▀▄▀ █░▀█
   `);
 
   console.log("==> 🟦 join channel : https://t.me/UNLXairdop");
@@ -84,10 +83,10 @@ const keepAliveRequest = async (headers, email) => {
     try {
         const response = await axios.post(apiEndpoints.keepalive, payload, { headers, httpsAgent: ignoreSslAgent });
         if (response.status === 200) {
-            console.log(`✅ Keep-Alive Success for ${email}: ${response.data.message}`);
+            console.log(`✅ Sukses : Sedang menjalankan akun ${email}: ${response.data.message}`);
             return true;
         } else {
-            console.warn(`🚫 Keep-Alive Error for ${email}: ${response.status} - ${response.data.message || 'Unknown error'}`);
+            console.warn(`🚫 Kesalahan akun ${email}: ${response.status} - ${response.data.message || 'Unknown error'}`);
         }
     } catch (error) {
         console.error(``);
@@ -97,7 +96,7 @@ const keepAliveRequest = async (headers, email) => {
 
 const countdown = async (seconds) => {
     for (let i = seconds; i > 0; i--) {
-        process.stdout.write(`⏳ Next process in: ${i} seconds...\r`);
+        process.stdout.write(`⏳ Proses selanjutnya sedang berjalan: ${i} seconds...\r`);
         await randomDelay(1, 1);
     }
     console.log("\n🔄 Restarting...\n");
@@ -105,7 +104,7 @@ const countdown = async (seconds) => {
 
 const countdownAccountDelay = async (seconds) => {
     for (let i = seconds; i > 0; i--) {
-        process.stdout.write(`⏳ Waiting for account processing in: ${i} seconds...\r`);
+        process.stdout.write(`⏳ Tunggu proses akun: ${i} seconds...\r`);
         await randomDelay(1, 1);
     }
     console.log("\n");
@@ -131,24 +130,25 @@ const processAccounts = async () => {
 
             if (proxy) headers['Proxy'] = proxy;
             console.log(`----------------------------------------------------------------`);
-            console.log(`🔍 Processing: ${email} using proxy: ${proxy || 'No Proxy'}...`);
+            console.log(`🔍 Memproses: ${email} using proxy: ${proxy || 'No Proxy'}...`);
             const points = await fetchPoints(headers);
             totalPoints += points;
 
             if (points > 0) {
                 const success = await keepAliveRequest(headers, email);
                 if (!success) {
-                    console.log(`✅ Keep-Alive Success for ${email} account.\n`);
+                    console.log(`✅ Sukses : Sedang menjalankan akun ${email} account.\n`);
                 }
             } else {
-                console.error(`❌ No points available for ${email}.`);
+                console.error(`❌ Tidak ada nilai point ${email}.`);
                 console.log(`----------------------------------------------------------------`);
             }
 
             await countdownAccountDelay(config.accountDelay);
         }
 
-        console.log(`📋 All accounts processed. Total points: ${totalPoints}`);
+        console.log(`📋 Memproses semua akun. Total points: ${totalPoints}`);
+	console.log(`☕🚬 Sambil ngopi bang biar enjoy. 🙏🙏🙏🙏`);
         await countdown(config.restartDelay);
     }
 };
