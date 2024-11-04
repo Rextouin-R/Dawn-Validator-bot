@@ -1,6 +1,12 @@
+# Register HERE
+[![Static Badge](https://img.shields.io/badge/Telegram-Bot%20Link-Link?style=for-the-badge&logo=Telegram&logoColor=white&logoSize=auto&color=blue)](https://t.me/birdx2_bot/birdx?startapp=7350641156)
+
+# Join Telegram  ♾︎ 
+[![Static Badge](https://img.shields.io/badge/Telegram-Airdrop◾unlimited-Link?style=for-the-badge&logo=Telegram&logoColor=white&logoSize=auto&color=blue)](https://t.me/UNLXairdop)
+
 # DAWN Validator Extension automatic claim
 
-## What needed
+## Memerlukan 
 - Node JS
 
 ## Features
@@ -10,29 +16,27 @@
 - Auto loop.
 - Proxy support.
 
-
-## Installing and setup
-
-### Install
-1. Clone the project and go to project directory
+## Install
+1. Cloning repositorynya
    ```
    git clone https://github.com/recitativonika/Dawn-Validator-bot.git
    ```
    ```
    cd Dawn-Validator-bot
    ```
-2. Install required package
+2. Install paketnya
    ```
    npm install
    ```
-   or
+   atau
    ```
    npm i
    ```
-### Setup and run
+### Persiapan untum menjalankan
 
-1. Login/register Dawn Validator account and login, get the token in "getpoint?appid=" -> "authorization:" at network tab in inspect element in browser. 
-2. In `Dawn-Validator-bot` directory, Edit and adjust this line in `accounts.js` and save it
+1. Login/register Dawn Validator account dan login, ambil token di bagian "getpoint?appid=" -> "authorization:" klik titik tiga di bagian kanan atas browser kalian,scroll ke bawah klik bagian mode developer. 
+2.Ambil has token di bagian "berear" , dan copy semua has "berear"nya.
+3. Buka file `Dawn-Validator-bot` edit berkas `accounts.js isi bagian "email" dengan akun DAWN kalian dan paste has tokennya di bagian "token1" atau "token2", seperti ini contoh berkasnya.
 	```
 	// accounts.js
 	module.exports = [
@@ -41,19 +45,18 @@
 		// Add more accounts as needed
 	];
 	```
-3. Edit and adjust the `config.js` for proxy and delay options.
+4. Edit berkas `config.js` jika tidak ingin menggunakan proxy biarkan "false".
 	```
 	// config.js
 	module.exports = {
-	    useProxy: false, // Set to true if you want to run with proxies
-	    minDelay: 3, // random delay for keepalive packet send
-	    maxDelay: 10, // random delay for keepalive packet send
-	    restartDelay: 241, // Delay in seconds before restarting the process
-	    accountDelay: 121, // Custom delay in seconds before processing the next account
+	    useProxy: false, // biarkan false jika tidak ingin menggunakan proxy
+	    minDelay: 3, // 
+	    maxDelay: 10, // 
+	    restartDelay: 241, // 
+	    accountDelay: 121, //
 	};
 	```
-4. Edit the `proxy.js` if you want to use proxy
-5. Run the script to start, use :
+5. Untuk menjalankan svriptnya, ketikan perintah :
     ```
     node index.js
     ```
@@ -61,5 +64,3 @@
 	
 	
 Dawn Validator Extension : https://chromewebstore.google.com/detail/dawn-validator-chrome-ext/fpdkjdnhkakefebpekbdhillbhonfjjp?authuser=0&hl=en
-
-My reff code if you want :) : 9lv10g33
