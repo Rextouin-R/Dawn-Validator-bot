@@ -22,7 +22,7 @@
 ## Install
 1. Cloning repositorynya
    ```
-   git clone https://github.com/recitativonika/Dawn-Validator-bot.git
+   git clone https://github.com/Rextouin-R/Dawn-Validator-bot.git
    ```
    ```
    cd Dawn-Validator-bot
