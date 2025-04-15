@@ -105,7 +105,7 @@ const keepAliveRequest = async (headers, email, appId) => {
         if (response.status === 200) {
             return true;
         } else {
-            console.warn(`🚫 Keep-Alive Error untuk ${email}: ${response.status} - ${response.data.message || 'Unknown error'}`);
+            console.warn(`🚫 Keep-Alive Error untuk ${email}: ${response.status} - ${response.data.message || 'Kesalahan tidak di ketahui'}`);
         }
     } catch (error) {
         console.error(`Kesalahan jaringan ⚠️ point untuk ${email}: ${error.message}`);
@@ -149,7 +149,7 @@ const processAccount = async (account, proxy, appIds) => {
 
     const points = await fetchPoints(headers, appId);
 
-    console.log(`🔍 Processing: \x1b[36m${email}\x1b[0m, Proxy: ${proxy ? '\x1b[33m' + proxy + '\x1b[0m' : '\x1b[33mNo Proxy\x1b[0m'}, Points: \x1b[32m${points}\x1b[0m`);
+    console.log(`🔍 Memproses: \x1b[36m${email}\x1b[0m, Proxy: ${proxy ? '\x1b[33m' + proxy + '\x1b[0m' : '\x1b[33mNo Proxy\x1b[0m'}, Points: \x1b[32m${points}\x1b[0m`);
 
     const success = await keepAliveRequest(headers, email, appId);
     if (success) {
