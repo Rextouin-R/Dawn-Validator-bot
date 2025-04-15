@@ -5,7 +5,7 @@
 [![Static Badge](https://img.shields.io/badge/Telegram-Airdrop◾unlimited-Link?style=for-the-badge&logo=Telegram&logoColor=white&logoSize=auto&color=blue)](https://t.me/UNLXairdop)
 
 # DAWN Validator Extension automatic claim
-
+⚠️ Kestabilan jaringan sangat berpengaruh untuk progres
 ## Tools by recitativonika
 
 ## Memerlukan 
@@ -27,7 +27,7 @@
    ```
    cd Dawn-Validator-bot
    ```
-2. Install paketnya
+2. Install 
    ```
    npm install
    ```
@@ -35,7 +35,7 @@
    ```
    npm i
    ```
-### Persiapan untum menjalankan
+### Persiapan untuk menjalankan
 
 1. Login/register Dawn Validator account dan login, ambil token di bagian "getpoint?appid=" -> "authorization:" klik titik tiga di bagian kanan atas browser kalian,scroll ke bawah klik bagian mode developer. 
 2.Ambil has token di bagian "berear" , dan copy semua has "berear"nya.
