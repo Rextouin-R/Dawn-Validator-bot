@@ -84,10 +84,10 @@ const fetchPoints = async (headers, appId) => {
             );
             return totalPoints;
         } else {
-            console.error(`❌ Failed to retrieve the points: ${response.data.message || 'Unknown error'}`);
+            console.error(`❌ Gagal mengambil poin: ${response.data.message || 'Kesalahan tidak di ketahui'}`);
         }
     } catch (error) {
-        console.error(`⚠️ Error during fetching the points: ${error.message}`);
+        console.error(`Kesalahan jaringan ⚠️ gagal mengambil poin: ${error.message}`);
     }
     return 0;
 };
@@ -105,20 +105,20 @@ const keepAliveRequest = async (headers, email, appId) => {
         if (response.status === 200) {
             return true;
         } else {
-            console.warn(`🚫 Keep-Alive Error for ${email}: ${response.status} - ${response.data.message || 'Unknown error'}`);
+            console.warn(`🚫 Keep-Alive Error untuk ${email}: ${response.status} - ${response.data.message || 'Unknown error'}`);
         }
     } catch (error) {
-        console.error(`⚠️ Error during keep-alive request for ${email}: ${error.message}`);
+        console.error(`Kesalahan jaringan ⚠️ point untuk ${email}: ${error.message}`);
     }
     return false;
 };
 
 const countdown = async (seconds) => {
     for (let i = seconds; i > 0; i--) {
-        process.stdout.write(`⏳ Next process in: ${i} seconds...\r`);
+        process.stdout.write(`⏳ proses selanjutnya: ${i} seconds...\r`);
         await randomDelay(1, 1);
     }
-    console.log("\n🔄 Restarting...\n");
+    console.log("\n🔄 Memuat...\n");
 };
 
 const processAccount = async (account, proxy, appIds) => {
@@ -153,9 +153,9 @@ const processAccount = async (account, proxy, appIds) => {
 
     const success = await keepAliveRequest(headers, email, appId);
     if (success) {
-        console.log(`✅ Keep-Alive Success for: \x1b[36m${email}\x1b[0m`);
+        console.log(`✅ Keep-Alive Berhasil untuk: \x1b[36m${email}\x1b[0m`);
     } else {
-        console.warn(`❌ Keep-Alive Failed for: \x1b[36m${email}\x1b[0m`);
+        console.warn(`❌ Keep-Alive Gagal untuk: \x1b[36m${email}\x1b[0m`);
     }
 
     return points;
@@ -175,7 +175,7 @@ const processAccounts = async () => {
         const pointsArray = await Promise.all(accountPromises);
         const totalPoints = pointsArray.reduce((acc, points) => acc + points, 0);
 
-        console.log(`📋 All accounts processed. Total points: \x1b[32m${totalPoints}\x1b[0m`);
+        console.log(`📋 Semua akun telah di proses. Total poin: \x1b[32m${totalPoints}\x1b[0m`);
         await countdown(config.restartDelay);
     }
 };
