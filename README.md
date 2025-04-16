@@ -6,6 +6,7 @@
 
 # DAWN Validator Extension automatic claim
 ⚠️ Kestabilan jaringan sangat berpengaruh untuk progres
+⚠️ Dan token barear akan di reset setiap 24jam
 ## Tools by recitativonika
 
 ## Memerlukan 
