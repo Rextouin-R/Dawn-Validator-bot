@@ -107,15 +107,13 @@ const keepAliveRequest = async (headers, email, appId) => {
         } else {
             console.warn(`🚫 Keep-Alive Error untuk ${email}: ${response.status} - ${response.data.message || 'Kesalahan tidak di ketahui'}`);
         }
-    } catch (error) {
-        console.error(`Kesalahan jaringan ⚠️ point untuk ${email}: ${error.message}`);
-    }
+    } 
     return false;
 };
 
 const countdown = async (seconds) => {
     for (let i = seconds; i > 0; i--) {
-        process.stdout.write(`⏳ proses selanjutnya: ${i} seconds...\r`);
+        process.stdout.write(`⏳ Memeriksa koneksi selanjutnya: ${i} detik...\r`);
         await randomDelay(1, 1);
     }
     console.log("\n🔄 Memuat...\n");
@@ -149,13 +147,12 @@ const processAccount = async (account, proxy, appIds) => {
 
     const points = await fetchPoints(headers, appId);
 
-    console.log(`🔍 Memproses: \x1b[36m${email}\x1b[0m, Proxy: ${proxy ? '\x1b[33m' + proxy + '\x1b[0m' : '\x1b[33mNo Proxy\x1b[0m'}, Points: \x1b[32m${points}\x1b[0m`);
+    console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
+    console.log(`🔍 Memproses hasil koneksi: \x1b[36m${email}\x1b[0m, Proxy: ${proxy ? '\x1b[33m' + proxy + '\x1b[0m' : '\x1b[33mNo Proxy\x1b[0m'}, Points: \x1b[32m${points}\x1b[0m`);
 
     const success = await keepAliveRequest(headers, email, appId);
     if (success) {
-        console.log(`✅ Keep-Alive Berhasil untuk: \x1b[36m${email}\x1b[0m`);
     } else {
-        console.warn(`❌ Keep-Alive Gagal untuk: \x1b[36m${email}\x1b[0m`);
     }
 
     return points;
@@ -175,6 +172,7 @@ const processAccounts = async () => {
         const pointsArray = await Promise.all(accountPromises);
         const totalPoints = pointsArray.reduce((acc, points) => acc + points, 0);
 
+        console.log("===========================================≠===============");
         console.log(`📋 Semua akun telah di proses. Total poin: \x1b[32m${totalPoints}\x1b[0m`);
         await countdown(config.restartDelay);
     }
