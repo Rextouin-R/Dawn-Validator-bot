@@ -85,10 +85,10 @@ const fetchPoints = async (headers, appId) => {
             );
             return totalPoints;
         } else {
-            console.error(`❌ Failed to retrieve the points: ${response.data.message || 'Unknown error'}`);
+            console.error(``);
         }
     } catch (error) {
-        console.error(`⚠️ Error during fetching the points: ${error.message}`);
+        console.error(``);
     }
     return 0;
 };
@@ -150,8 +150,8 @@ const processAccount = async (account, proxy, appIds) => {
 
     const points = await fetchPoints(headers, appId);
 
-    console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
-    console.log(`🔍 Memproses: \x1b[36m${email}\x1b[0m, Proxy: ${proxy ? '\x1b[33m' + proxy + '\x1b[0m' : '\x1b[33mNo Proxy\x1b[0m'}, Points: \x1b[32m${points}\x1b[0m`);
+    console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
+    console.log(`🔍 Memproses koneksi: \x1b[36m${email}\x1b[0m, Proxy: ${proxy ? '\x1b[33m' + proxy + '\x1b[0m' : '\x1b[33mNo Proxy\x1b[0m'}, Points: \x1b[32m${points}\x1b[0m`);
 
     const success = await keepAliveRequest(headers, email, appId);
     if (success) {
@@ -177,6 +177,7 @@ const processAccounts = async () => {
         const pointsArray = await Promise.all(accountPromises);
         const totalPoints = pointsArray.reduce((acc, points) => acc + points, 0);
 
+        console.log("===============================================≠=============");
         console.log(`📋 Semua akun telah di proses. Total points: \x1b[32m${totalPoints}\x1b[0m`);
         await countdown(config.restartDelay);
     }
