@@ -40,7 +40,7 @@
 
 1. Login/register Dawn Validator account dan login, ambil token di bagian "getpoint?appid=" -> "authorization:" klik titik tiga di bagian kanan atas browser kalian,scroll ke bawah klik bagian mode developer. 
 2.Ambil has token di bagian "berear" , dan copy semua has "berear"nya.
-3. Buka file `Dawn-Validator-bot` edit berkas `accounts.js isi bagian "email" dengan akun DAWN kalian dan paste has tokennya di bagian "token1" atau "token2", seperti ini contoh berkasnya.
+3. Buka file `Dawn-Validator-bot` edit berkas `accounts.js isi bagian "email" dengan akun DAWN kalian dan paste bearer tokennya di bagian "token1" atau "token2", seperti ini contoh berkasnya.
 	```
 	// accounts.js
 	module.exports = [
