@@ -4,7 +4,7 @@
 # Join Telegram  ♾︎ 
 [![Static Badge](https://img.shields.io/badge/Telegram-Airdrop◾unlimited-Link?style=for-the-badge&logo=Telegram&logoColor=white&logoSize=auto&color=blue)](https://t.me/UNLXairdop)
 
-# DAWN Validator Extension automatic claim
+# DAWN Validator Extention automatic claim
 ⚠️ Kestabilan jaringan sangat berpengaruh untuk progres
 ⚠️ Dan token bearer akan di reset setiap 24jam
 ## Tools by recitativonika
